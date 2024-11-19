@@ -70,7 +70,7 @@ function sendVotesToDiscord(voteData) {
     const messageContent = {
         embeds: [{
             color: 3447003, // Color of the embed box (optional)
-            title: `New SASP Voting Submission`,
+            title: `SALE Voting Submission`,
             description: `Votes from <@${voteData["Discord ID"]}>`,
             fields: [
                 { name: 'FTD Head', value: voteData["FTD Head"], inline: true },
