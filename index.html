@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASP Voting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: auto;
+            margin: 0;
+            padding-top: 20px;
+        }
+        .voting-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px; 
+            position: relative;
+            top: 10px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        .candidate {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .candidate input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .voting-forms {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+        .left-forms {
+            margin-right: 50px;
+        }
+        .right-forms {
+            margin-left: 50px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .voting-forms {
+                grid-template-columns: 1fr;
+            }
+            .left-forms, .right-forms {
+                margin: 0;
+            }
+        }
+        #response {
+            margin-top: 20px;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>SASP Voting System</h1>
+
+    <!-- Discord ID Input Form -->
+<div class="voting-container">
+    <h2>Discord ID Verification</h2>
+    <input type="text" name="discord_id" placeholder="Enter your Discord ID" required>
+</div>
+
+
+    <form action="submit_all_votes" method="post">
+        <div class="voting-forms">
+            <!-- Form for FTD Head -->
+            <div class="voting-container left-forms">
+                <h2>Vote FTD Head</h2>
+                <div class="candidate">
+                    <input type="radio" id="candidate1" name="candidate_ftd" value="Candidate 1">
+                    <label for="candidate1">Candidate 1</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate2" name="candidate_ftd" value="Candidate 2">
+                    <label for="candidate2">Candidate 2</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate3" name="candidate_ftd" value="Candidate 3">
+                    <label for="candidate3">Candidate 3</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate4" name="candidate_ftd" value="Candidate 4">
+                    <label for="candidate4">Candidate 4</label>
+                </div>
+            </div>
+
+            <!-- Form for ASD Head -->
+            <div class="voting-container right-forms">
+                <h2>Vote ASD Head</h2>
+                <div class="candidate">
+                    <input type="radio" id="candidate1_asd" name="candidate_asd" value="Candidate 1">
+                    <label for="candidate1_asd">Candidate 1</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate2_asd" name="candidate_asd" value="Candidate 2">
+                    <label for="candidate2_asd">Candidate 2</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate3_asd" name="candidate_asd" value="Candidate 3">
+                    <label for="candidate3_asd">Candidate 3</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate4_asd" name="candidate_asd" value="Candidate 4">
+                    <label for="candidate4_asd">Candidate 4</label>
+                </div>
+            </div>
+
+            <!-- Form for SEU Head -->
+            <div class="voting-container left-forms">
+                <h2>Vote SEU Head</h2>
+                <div class="candidate">
+                    <input type="radio" id="candidate1_seu" name="candidate_seu" value="Candidate 1">
+                    <label for="candidate1_seu">Candidate 1</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate2_seu" name="candidate_seu" value="Candidate 2">
+                    <label for="candidate2_seu">Candidate 2</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate3_seu" name="candidate_seu" value="Candidate 3">
+                    <label for="candidate3_seu">Candidate 3</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate4_seu" name="candidate_seu" value="Candidate 4">
+                    <label for="candidate4_seu">Candidate 4</label>
+                </div>
+            </div>
+
+            <!-- Form for MPU Head -->
+            <div class="voting-container right-forms">
+                <h2>Vote MPU Head</h2>
+                <div class="candidate">
+                    <input type="radio" id="candidate1_mpu" name="candidate_mpu" value="Candidate 1">
+                    <label for="candidate1_mpu">Candidate 1</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate2_mpu" name="candidate_mpu" value="Candidate 2">
+                    <label for="candidate2_mpu">Candidate 2</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate3_mpu" name="candidate_mpu" value="Candidate 3">
+                    <label for="candidate3_mpu">Candidate 3</label>
+                </div>
+
+                <div class="candidate">
+                    <input type="radio" id="candidate4_mpu" name="candidate_mpu" value="Candidate 4">
+                    <label for="candidate4_mpu">Candidate 4</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common Submit Button for All Forms -->
+        <button type="submit" class="submit-btn">Submit All Votes</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
