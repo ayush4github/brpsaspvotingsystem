@@ -79,7 +79,6 @@
         .right-forms {
             margin-left: 50px;
         }
-        /* Responsive design */
         @media (max-width: 768px) {
             .voting-forms {
                 grid-template-columns: 1fr;
@@ -93,9 +92,8 @@
             color: #007bff;
             font-weight: bold;
         }
-        /* Style for logos */
         .logo {
-            width: 40px; /* Adjust logo size as necessary */
+            width: 40px; 
             height: 40px;
             margin: 0 10px;
         }
@@ -103,16 +101,13 @@
 </head>
 <body>
     <h1>
-        <!-- Logo Before the Title -->
         <img src="SASP_logo.png" alt="Logo Before" class="logo">
         
         SALE Voting System
         
-        <!-- Logo After the Title -->
         <img src="SALE_Voting_System.png" alt="Logo After" class="logo">
     </h1>
 
-    <!-- Discord ID Input Form -->
     <div class="voting-container">
         <h2>Discord ID Verification</h2>
         <input type="text" name="discord_id" placeholder="Enter your Discord ID" required>
@@ -120,7 +115,6 @@
 
     <form action="submit_all_votes" method="post">
         <div class="voting-forms">
-            <!-- Form for FTD Head -->
             <div class="voting-container left-forms">
                 <h2>Vote FTD Head</h2>
                 <div class="candidate">
@@ -129,7 +123,6 @@
                 </div>
             </div>
 
-            <!-- Form for ASD Head -->
             <div class="voting-container right-forms">
                 <h2>Vote ASD Head</h2>
                 <div class="candidate">
@@ -143,7 +136,6 @@
                 </div>
             </div>
 
-            <!-- Form for SEU Head -->
             <div class="voting-container left-forms">
                 <h2>Vote SEU Head</h2>
                 <div class="candidate">
@@ -162,7 +154,6 @@
                 </div>
             </div>
 
-            <!-- Form for MPU Head -->
             <div class="voting-container right-forms">
                 <h2>Vote MPU Head</h2>
                 <div class="candidate">
@@ -172,7 +163,6 @@
             </div>
         </div>
 
-        <!-- Common Submit Button for All Forms -->
         <button type="submit" class="submit-btn">Submit All Votes</button>
     </form>
     <script src="script.js"></script>
